@@ -25,9 +25,6 @@ const SignUp = () => {
         setConfirmPassword(event.target.value);
         // console.log(event.target.value) 
     }
-    if(user){
-        navigate('/home');
-    }
     const handleCreateSignup = event => {
         
         event.preventDefault();
@@ -39,6 +36,9 @@ const SignUp = () => {
         }
         createUserWithEmailAndPassword(email, password);
 
+    }
+    if(user){
+        navigate('/home');
     }
 
     return (

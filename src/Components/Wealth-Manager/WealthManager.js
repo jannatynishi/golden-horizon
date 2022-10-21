@@ -1,9 +1,10 @@
 import React from 'react';
+ 
 
 const WealthManager = () => {
     return (
-        <div>
-            <h1 className='text-center text-4xl pt-4'>Protected page</h1>
+        <div >
+           <img className='mx-auto pt-16' src='https://i.postimg.cc/T3svX7Gx/13-Baby-Animals-Being-Grumpy-Old-Men.jpg' alt="" />
         </div>
     );
 };
