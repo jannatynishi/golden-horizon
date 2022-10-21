@@ -9,6 +9,7 @@ import Options from './Components/Options/Options';
 import RequireAuth from './Components/RequireAuth/RequireAuth';
 import SignUp from './Components/SignUp/SignUp';
 import WealthManager from './Components/Wealth-Manager/WealthManager';
+import Footer from './Footer/Footer';
 function App() {
   return (
     <div className="App">
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
+        <Route path='/home/:about' element={<AboutUs></AboutUs>}></Route>
         <Route path='/business' element={<Business></Business>}></Route>
         <Route path='/wealth-management' element={
           <RequireAuth>
@@ -27,7 +29,7 @@ function App() {
         <Route path='/sign-up' element={<SignUp></SignUp>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
       </Routes>
-
+        <Footer></Footer>
 
     </div>
   );

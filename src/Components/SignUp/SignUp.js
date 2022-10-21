@@ -8,9 +8,10 @@ const SignUp = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
+    const [accountCreated, setAccountCreated] = useState('');
     const navigate = useNavigate();
-    
-    const [createUserWithEmailAndPassword, user] = useCreateUserWithEmailAndPassword(auth); 
+
+    const [createUserWithEmailAndPassword, user] = useCreateUserWithEmailAndPassword(auth);
     const handleEmailBlur = event => {
         setEmail(event.target.value);
         // console.log(event.target.value)
@@ -26,18 +27,21 @@ const SignUp = () => {
         // console.log(event.target.value) 
     }
     const handleCreateSignup = event => {
-        
+
         event.preventDefault();
-        if(password !== confirmPassword){
+        if (password !== confirmPassword) {
             setError('*Confirm password did not match')
         }
-        if(password.length <6){
+        if (password === confirmPassword) {
+            setAccountCreated('Account created successfully')
+        }
+        if (password.length < 6) {
             setError('*Password must be at least 6 character')
         }
         createUserWithEmailAndPassword(email, password);
 
     }
-    if(user){
+    if (user) {
         navigate('/home');
     }
 
@@ -57,11 +61,12 @@ const SignUp = () => {
             </label>
             <br />
             <p className='text-rose-600 pt-4'>{error}</p>
-           
+
             <label>
-                <input type="submit" className='hover:bg-indigo-700 mt-6 px-4 py-2 text-white bg-indigo-900 rounded-full' value="Submit"/>
+                <input type="submit" className='hover:bg-indigo-700 mt-6 px-4 py-2 text-white bg-indigo-900 rounded-full' value="Submit" />
                 {/* <button onClick={handleSubmit} className='mt-8 px-4 py-2 text-white bg-indigo-900 rounded-full '>Submit</button> */}
             </label>
+            <p className=' text-green-600'>{accountCreated}</p>
             <p className='text-indigo-900 pt-6'>Already have an Account? <Link to='/login' className='underline text-indigo-500'> Login from here</Link></p>
         </form>
 
