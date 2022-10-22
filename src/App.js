@@ -25,7 +25,7 @@ function App() {
           </RequireAuth>
         }></Route>
         <Route path='/options' element={<Options></Options>}></Route>
-        <Route path='/about-us' element={<AboutUs></AboutUs>}></Route>
+        {/* <Route path='/about-us' element={<AboutUs></AboutUs>}></Route> */}
         <Route path='/sign-up' element={<SignUp></SignUp>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
       </Routes>
