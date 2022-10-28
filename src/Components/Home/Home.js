@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import banner from '../../images/banner.jpg';
+import PageTitle from '../Shared/PageTitle';
 import './Home.css'
 const Home = () => {
     const id = 1;
@@ -17,7 +18,7 @@ const Home = () => {
            <div className='ms-8 justify-end banner'>
             <img src={banner} alt="" />
            </div>
-           
+           <PageTitle title='Home'></PageTitle>
         </div>
     );
 };

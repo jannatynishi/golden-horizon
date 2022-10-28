@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../Firebase.init';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import PageTitle from '../Shared/PageTitle';
 
 const SignUp = () => {
     const [email, setEmail] = useState('');
@@ -68,6 +69,7 @@ const SignUp = () => {
             </label>
             <p className=' text-green-600'>{accountCreated}</p>
             <p className='text-indigo-900 pt-6'>Already have an Account? <Link to='/login' className='underline text-indigo-500'> Login from here</Link></p>
+            <PageTitle title='Sign up'></PageTitle>
         </form>
 
     );

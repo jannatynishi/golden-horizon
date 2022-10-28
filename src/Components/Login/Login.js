@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../Firebase.init';
+import PageTitle from '../Shared/PageTitle';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -46,6 +47,7 @@ const Login = () => {
             {/* <button onClick={handleSubmit} className='mt-8 px-4 py-2 text-white bg-indigo-900 rounded-full '>Submit</button> */}
         </label>
         <p className='text-indigo-900 pt-6'>New to Golden Horizon? <Link to='/sign-up' className='underline text-indigo-500'> Create an Account</Link></p>
+        <PageTitle title='Login'></PageTitle>
     </form>
     );
 };
